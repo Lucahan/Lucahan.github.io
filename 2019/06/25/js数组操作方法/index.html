@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000">
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top">
+  
+  
+  <title>js数组操作方法 | 汉景源的博客</title>
+  <meta name="description" content="参考文章：https://segmentfault.com/a/1190000019522061 1.toString将数组转换为以逗号分隔的字符串 12let a = [&apos;a&apos;,&apos;b&apos;,&apos;c&apos;];console.log(a.toString());//a,b,c  2.join与toString方法相似，不同的是，这里可以指定符号，而不是默认的逗号 12let a = [&apos;a&apos;,&apos;b&apos;,&apos;c&apos;]">
+<meta name="keywords" content="js,数组">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js数组操作方法">
+<meta property="og:url" content="http://yoursite.com/2019/06/25/js数组操作方法/index.html">
+<meta property="og:site_name" content="汉景源的博客">
+<meta property="og:description" content="参考文章：https://segmentfault.com/a/1190000019522061 1.toString将数组转换为以逗号分隔的字符串 12let a = [&apos;a&apos;,&apos;b&apos;,&apos;c&apos;];console.log(a.toString());//a,b,c  2.join与toString方法相似，不同的是，这里可以指定符号，而不是默认的逗号 12let a = [&apos;a&apos;,&apos;b&apos;,&apos;c&apos;]">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-06-25T13:19:00.443Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js数组操作方法">
+<meta name="twitter:description" content="参考文章：https://segmentfault.com/a/1190000019522061 1.toString将数组转换为以逗号分隔的字符串 12let a = [&apos;a&apos;,&apos;b&apos;,&apos;c&apos;];console.log(a.toString());//a,b,c  2.join与toString方法相似，不同的是，这里可以指定符号，而不是默认的逗号 12let a = [&apos;a&apos;,&apos;b&apos;,&apos;c&apos;]">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://yoursite.com/2019/06/25/js数组操作方法/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="汉景源的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+  
+  
+  
+</head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/lucahan" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">汉景源(GIS工程师)</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">长沙市规划信息服务中心</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> 长沙,中国</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">Home</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">Archives</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">Categories</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">Tags</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">About</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎来到我的博客，我只是一个写gis的!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/html/">html</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-body">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/居中/">居中</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数组/">数组</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/css/" style="font-size: 13px;">css</a> <a href="/tags/html/" style="font-size: 13px;">html</a> <a href="/tags/js/" style="font-size: 13px;">js</a> <a href="/tags/test/" style="font-size: 13px;">test</a> <a href="/tags/居中/" style="font-size: 13px;">居中</a> <a href="/tags/数组/" style="font-size: 13px;">数组</a> <a href="/tags/随笔/" style="font-size: 13px;">随笔</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Archive</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a><span class="archive-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/js/">js</a>
+              </p>
+              <p class="item-title">
+                <a href="/2019/06/25/js数组操作方法/" class="title">js数组操作方法</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-06-25T13:18:17.000Z" itemprop="datePublished">2019-06-25</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/html/">html</a>
+              </p>
+              <p class="item-title">
+                <a href="/2019/06/24/六种居中方式实现/" class="title">六种居中方式实现</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-06-24T12:06:42.000Z" itemprop="datePublished">2019-06-24</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/随笔/">随笔</a>
+              </p>
+              <p class="item-title">
+                <a href="/2019/06/23/重返博客/" class="title">重返博客</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-06-23T11:06:45.000Z" itemprop="datePublished">2019-06-23</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2019/06/23/hello-world/" class="title">Hello World</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-06-23T05:10:43.709Z" itemprop="datePublished">2019-06-23</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-js数组操作方法" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      js数组操作方法
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2019/06/25/js数组操作方法/" class="article-date">
+	  <time datetime="2019-06-25T13:18:17.000Z" itemprop="datePublished">2019-06-25</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/js/">js</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/tags/js/">js</a>, <a class="article-tag-link" href="/tags/数组/">数组</a>
+  </span>
+
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/06/25/js数组操作方法/#comments" class="article-comment-link">Comments</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <p>参考文章：<a href="https://segmentfault.com/a/1190000019522061" target="_blank" rel="noopener">https://segmentfault.com/a/1190000019522061</a></p>
+<h5 id="1-toString"><a href="#1-toString" class="headerlink" title="1.toString"></a>1.toString</h5><p>将数组转换为以逗号分隔的字符串</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>];</span><br><span class="line"><span class="built_in">console</span>.log(a.toString());<span class="comment">//a,b,c</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="2-join"><a href="#2-join" class="headerlink" title="2.join"></a>2.join</h5><p>与toString方法相似，不同的是，这里可以指定符号，而不是默认的逗号</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>];</span><br><span class="line"><span class="built_in">console</span>.log(a.join(<span class="string">'*'</span>));<span class="comment">//a*b*c</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="3-concat"><a href="#3-concat" class="headerlink" title="3.concat"></a>3.concat</h5><p>将两个数组相连接，返回一个新的数组</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"><span class="keyword">let</span> b = [<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>];</span><br><span class="line"><span class="built_in">console</span>.log(a.concat(b))<span class="comment">//[1,2,3,4,5,6]</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="4-push"><a href="#4-push" class="headerlink" title="4.push"></a>4.push</h5><p>向数组尾部追加元素，并且修改原始数组</p>
+<h5 id="5-pop"><a href="#5-pop" class="headerlink" title="5.pop"></a>5.pop</h5><p>删除数组的最后一项并且返回</p>
+<h5 id="6-shift"><a href="#6-shift" class="headerlink" title="6.shift"></a>6.shift</h5><p>删除数组的第一项并且返回</p>
+<h5 id="7-unshift"><a href="#7-unshift" class="headerlink" title="7.unshift"></a>7.unshift</h5><p>向数组头部追加并且修改原来的数组</p>
+<h5 id="8-splice"><a href="#8-splice" class="headerlink" title="8.splice"></a>8.splice</h5><p>此方法是通过添加，删除和插入来修改原始数组</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">array.splice(index,[,deleteCount,ele1,...,eleN])</span><br><span class="line"><span class="comment">//index 删除数组的起点</span></span><br><span class="line"><span class="comment">//deleteCount 删除元素的个数</span></span><br><span class="line"><span class="comment">//ele1,...,eleN 要添加的元素</span></span><br></pre></td></tr></table></figure>
+
+<p>例一：两个参数</p>
+<blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="keyword">let</span> colors = [<span class="string">'green'</span>, <span class="string">'yellow'</span>, <span class="string">'blue'</span>, <span class="string">'purple'</span>];</span><br><span class="line">&gt; colors.splice(<span class="number">0</span>, <span class="number">3</span>);</span><br><span class="line">&gt; <span class="built_in">console</span>.log(colors); <span class="comment">// ["purple"]</span></span><br><span class="line">&gt; <span class="comment">// deletes ["green", "yellow", "blue"]</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>例二：一个参数</p>
+<p>如果只有index一个参数，那么会默认删除index后的所有参数</p>
+<p>例三：所有参数</p>
+<p>从索引开始，删除对应元素数，并且追加元素</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> schedule = [<span class="string">'I'</span>, <span class="string">'have'</span>, <span class="string">'a'</span>, <span class="string">'meeting'</span>, <span class="string">'tommorrow'</span>];</span><br><span class="line"><span class="comment">// removes 4 first elements and replace them with another</span></span><br><span class="line">schedule.splice(<span class="number">0</span>, <span class="number">1</span>, <span class="string">'we'</span>, <span class="string">'are'</span>, <span class="string">'going'</span>, <span class="string">'to'</span>, <span class="string">'swim'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(schedule); </span><br><span class="line"><span class="comment">//["we", "are", "going", "to", "swim", "have", "a", "meeting", "tommorrow"]</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="9-slice"><a href="#9-slice" class="headerlink" title="9.slice"></a>9.slice</h5><p>与splice相似，但是slice会复制数组的指定部分并且返回，而不会改变原来的数组</p>
+<p>array.slice(start,end)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> numbers = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line">numbers.slice(<span class="number">0</span>, <span class="number">3</span>)</span><br><span class="line"><span class="comment">// returns [1, 2, 3]</span></span><br><span class="line"><span class="built_in">console</span>.log(numbers) <span class="comment">//返回原始数组</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="10-split"><a href="#10-split" class="headerlink" title="10.split"></a>10.split</h5><p>把字符串分隔成子串并且作为数组进行返回</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span>  k = <span class="string">'a,b,c,d'</span>;</span><br><span class="line">k.split(<span class="string">','</span>)</span><br><span class="line"><span class="comment">//["a", "b", "c", "d"]</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="11-indexOf"><a href="#11-indexOf" class="headerlink" title="11.indexOf"></a>11.indexOf</h5><p>在数组中查找项目，并且返回索引，否则返回-1</p>
+<h5 id="12-lastIndexOf"><a href="#12-lastIndexOf" class="headerlink" title="12.lastIndexOf"></a>12.lastIndexOf</h5><p>在数组中反向查找项目，并且返回索引，否则返回-1</p>
+<h5 id="13-filter"><a href="#13-filter" class="headerlink" title="13.filter"></a>13.filter</h5><p>如果数组符合某个条件，那么会创建一个新的数组</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> c = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>]</span><br><span class="line"><span class="keyword">var</span> d = c.filter(<span class="function"><span class="params">code</span> =&gt;</span> code &gt; <span class="number">4</span>)</span><br><span class="line"><span class="built_in">console</span>.log(d) <span class="comment">//[5, 6, 7, 8]</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="14-map"><a href="#14-map" class="headerlink" title="14.map"></a>14.map</h5><p>此方法可以通过操作数组中的值来创建新的数组</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 将美元符号添加到数字前面</span></span><br><span class="line"><span class="keyword">const</span> numbers = [<span class="number">10</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">6</span>];</span><br><span class="line"><span class="keyword">const</span> dollars = numbers.map( <span class="function"><span class="params">number</span> =&gt;</span> <span class="string">'$'</span> + number);</span><br><span class="line"><span class="built_in">console</span>.log(dollars);</span><br><span class="line"><span class="comment">// ['$10', '$3', '$4', '$6'];</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="15-reduce"><a href="#15-reduce" class="headerlink" title="15.reduce"></a>15.reduce</h5><p>常用的使用方法是用来求数组和，数组乘积；</p>
+<p>较为高级的用法参见下文：<a href="https://www.jianshu.com/p/e375ba1cfc47" target="_blank" rel="noopener">https://www.jianshu.com/p/e375ba1cfc47</a></p>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&gt; &gt; &gt; &gt; &gt; <span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>];</span><br><span class="line">&gt; &gt; &gt; &gt; &gt; <span class="keyword">var</span> sum = arr.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">prev, cur, index, arr</span>) </span>&#123;</span><br><span class="line">&gt; &gt; &gt; &gt; &gt;     <span class="built_in">console</span>.log(prev, cur, index);</span><br><span class="line">&gt; &gt; &gt; &gt; &gt;     <span class="keyword">return</span> prev + cur;</span><br><span class="line">&gt; &gt; &gt; &gt; &gt; &#125;)</span><br><span class="line">&gt; &gt; &gt; &gt; &gt; <span class="built_in">console</span>.log(arr, sum);</span><br><span class="line">&gt; &gt; &gt; &gt; &gt; <span class="comment">/**</span></span><br><span class="line"><span class="comment">&gt; &gt; &gt; &gt; &gt; *打印结果</span></span><br><span class="line"><span class="comment">&gt; &gt; &gt; &gt; &gt; 1 2 1</span></span><br><span class="line"><span class="comment">&gt; &gt; &gt; &gt; &gt; 3 3 2</span></span><br><span class="line"><span class="comment">&gt; &gt; &gt; &gt; &gt; 6 4 3</span></span><br><span class="line"><span class="comment">&gt; &gt; &gt; &gt; &gt; [1, 2, 3, 4] 10</span></span><br><span class="line"><span class="comment">&gt; &gt; &gt; &gt; &gt; */</span></span><br><span class="line">&gt; &gt; &gt; &gt; &gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<h5 id="16-forEach"><a href="#16-forEach" class="headerlink" title="16.forEach"></a>16.forEach</h5><p>不用多说了，遍历数组</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<h5 id="17-every"><a href="#17-every" class="headerlink" title="17.every"></a>17.every</h5><p>检查数组中是否所有的项都符合指定条件，符合返回true，不符合返回false</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>];</span><br><span class="line"><span class="keyword">var</span> res = num.every(<span class="function"><span class="params">item</span> =&gt;</span> item &gt; <span class="number">5</span>);</span><br><span class="line"><span class="built_in">console</span>.log(res);<span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="18-some"><a href="#18-some" class="headerlink" title="18.some"></a>18.some</h5><p>检查数组中只要有一项符合指定条件，则返回true，不符合返回false</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>];</span><br><span class="line"><span class="keyword">var</span> res = num.some(<span class="function"><span class="params">item</span> =&gt;</span> item &gt; <span class="number">5</span>);</span><br><span class="line"><span class="built_in">console</span>.log(res);<span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+
+<p>19.includes</p>
+<p>与some方法相似，检查数组中是否包含特定项</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> users = [<span class="string">'paddy'</span>, <span class="string">'zaddy'</span>, <span class="string">'faddy'</span>, <span class="string">'baddy'</span>];</span><br><span class="line">users.includes(<span class="string">'baddy'</span>); <span class="comment">// returns true</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h5><ul>
+<li><strong>toString()</strong> - 将数组转换为以逗号分隔的字符串。</li>
+<li><strong>join()</strong> - 将所有数组元素组合成一个字符串。</li>
+<li><strong>concat</strong> - 将两个数组组合在一起，或者将更多项添加到数组中，然后返回一个新数组。</li>
+<li><strong>push()</strong> - 将项目添加到数组的末尾，<strong>改变</strong>原始数组。</li>
+<li><strong>pop()</strong> - 删除数组的最后一项并<strong>返回</strong></li>
+<li><strong>shift()</strong> - 删除数组的第一项并<strong>返回</strong></li>
+<li><strong>unshift()</strong> - 将一个项添加到数组的开头，<strong>改变</strong>原始数组。</li>
+<li><strong>splice()</strong> - 通过添加，删除和插入元素<strong>修改</strong>一个数组。</li>
+<li><strong>slice()</strong> - 复制数组的给定部分，并将复制的部分作为新数组返回。 <strong>它不会改变原始数组。</strong></li>
+<li><strong>split()</strong> - 将一个字符串分成子串并将它们作为数组返回。</li>
+<li><strong>indexOf()</strong> - 查找数组中的项目并返回其<strong>索引</strong>，如果没找到则返回<code>-1</code></li>
+<li><strong>lastIndexOf()</strong> - 从右到左查找项目并返回找到的最后一个索引。</li>
+<li><strong>filter()</strong> - 如果数组的项目符合某个条件，则创建一个新数组。</li>
+<li><strong>map()</strong> - 通过操纵数组中的值来创建一个新数组。</li>
+<li><strong>reduce()</strong> - 根据数组中的单个值进行计算。</li>
+<li><strong>forEach()</strong> - 遍历数组，将函数作用于数组中的所有项</li>
+<li><strong>every()</strong> - 检查数组中的所有项是否都符合指定的条件，如果符合则返回 <code>true</code>，否则返回 <code>false</code>。</li>
+<li><strong>some()</strong> - 检查数组中的项（一个或多个）是否符合指定的条件，如果符合则返回 true，否则返回 false。</li>
+<li><strong>includes()</strong> - 检查数组是否包含某个项目。</li>
+</ul>
+<p>附：</p>
+<p>MDN参考文档：<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array</a></p>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://yoursite.com/2019/06/25/js数组操作方法/" title="js数组操作方法" target="_blank" rel="external">http://yoursite.com/2019/06/25/js数组操作方法/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/lucahan" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/lucahan" target="_blank"><span class="text-dark">汉景源(GIS工程师)</span><small class="ml-1x">长沙市规划信息服务中心</small></a></h3>
+        <div>个人简介。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2019/06/24/六种居中方式实现/" title="六种居中方式实现"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        &copy; 2019 汉景源
+        
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script src="/js/plugin.min.js"></script>
+<script src="/js/application.js"></script>
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+
+
+
+
+   
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+</body>
+</html>
