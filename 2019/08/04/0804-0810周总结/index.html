@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000">
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top">
+  
+  
+  <title>0804-0810周总结 | 汉景源的博客</title>
+  <meta name="description" content="0804-0810周0805 给出一个WKT数据，通过ST_GeomFromText构造geometry数据，然后再使用ST_Intersects求相交数据；  1234SELECT gid, linecolor, proname, protype, proextent,shape_leng, shape_area, geom FROM public.kg_land_bound2 	where S">
+<meta name="keywords" content="postgis,asp.net web api,angularjs">
+<meta property="og:type" content="article">
+<meta property="og:title" content="0804-0810周总结">
+<meta property="og:url" content="http://yoursite.com/2019/08/04/0804-0810周总结/index.html">
+<meta property="og:site_name" content="汉景源的博客">
+<meta property="og:description" content="0804-0810周0805 给出一个WKT数据，通过ST_GeomFromText构造geometry数据，然后再使用ST_Intersects求相交数据；  1234SELECT gid, linecolor, proname, protype, proextent,shape_leng, shape_area, geom FROM public.kg_land_bound2 	where S">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-08-09T23:46:34.007Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="0804-0810周总结">
+<meta name="twitter:description" content="0804-0810周0805 给出一个WKT数据，通过ST_GeomFromText构造geometry数据，然后再使用ST_Intersects求相交数据；  1234SELECT gid, linecolor, proname, protype, proextent,shape_leng, shape_area, geom FROM public.kg_land_bound2 	where S">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://yoursite.com/2019/08/04/0804-0810周总结/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="汉景源的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+  
+  
+  
+</head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/lucahan" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">汉景源(GIS工程师)</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">长沙市规划信息服务中心</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> 长沙,中国</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">Home</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">Archives</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">Categories</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">Tags</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">About</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎来到我的博客，我只是一个写gis的!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/html/">html</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/周总结/">周总结</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-body">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/angularjs/">angularjs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/asp-net/">asp.net</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/asp-net-web-api/">asp.net web api</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/geoserver/">geoserver</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/openlayers/">openlayers</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/postgis/">postgis</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/居中/">居中</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数组/">数组</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/angularjs/" style="font-size: 13px;">angularjs</a> <a href="/tags/asp-net/" style="font-size: 13px;">asp.net</a> <a href="/tags/asp-net-web-api/" style="font-size: 13px;">asp.net web api</a> <a href="/tags/css/" style="font-size: 14px;">css</a> <a href="/tags/geoserver/" style="font-size: 14px;">geoserver</a> <a href="/tags/git/" style="font-size: 13px;">git</a> <a href="/tags/html/" style="font-size: 13px;">html</a> <a href="/tags/js/" style="font-size: 13px;">js</a> <a href="/tags/openlayers/" style="font-size: 14px;">openlayers</a> <a href="/tags/postgis/" style="font-size: 14px;">postgis</a> <a href="/tags/test/" style="font-size: 13px;">test</a> <a href="/tags/居中/" style="font-size: 13px;">居中</a> <a href="/tags/数组/" style="font-size: 13px;">数组</a> <a href="/tags/随笔/" style="font-size: 13px;">随笔</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Archive</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a><span class="archive-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/周总结/">周总结</a>
+              </p>
+              <p class="item-title">
+                <a href="/2019/08/04/0804-0810周总结/" class="title">0804-0810周总结</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-08-03T16:00:00.000Z" itemprop="datePublished">2019-08-04</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2019/08/03/测试赛/" class="title">测试赛</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-08-03T02:41:14.000Z" itemprop="datePublished">2019-08-03</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/周总结/">周总结</a>
+              </p>
+              <p class="item-title">
+                <a href="/2019/07/28/0728-0803周总结/" class="title">0728-0803周总结</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-07-27T16:00:00.000Z" itemprop="datePublished">2019-07-28</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/周总结/">周总结</a>
+              </p>
+              <p class="item-title">
+                <a href="/2019/07/27/0721-0727周总结/" class="title">0721-0727周总结</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-07-27T05:32:02.000Z" itemprop="datePublished">2019-07-27</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/js/">js</a>
+              </p>
+              <p class="item-title">
+                <a href="/2019/06/25/js数组操作方法/" class="title">js数组操作方法</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-06-25T13:18:17.000Z" itemprop="datePublished">2019-06-25</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <nav id="toc" class="article-toc">
+      <h3 class="toc-title">Catalogue</h3>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#0804-0810周"><span class="toc-number">1.</span> <span class="toc-text">0804-0810周</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#0805"><span class="toc-number">1.1.</span> <span class="toc-text">0805</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0806"><span class="toc-number">1.2.</span> <span class="toc-text">0806</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0807"><span class="toc-number">1.3.</span> <span class="toc-text">0807</span></a></li></ol></li></ol>
+    </nav>
+  </div>
+</aside>
+
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-0804-0810周总结" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      0804-0810周总结
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2019/08/04/0804-0810周总结/" class="article-date">
+	  <time datetime="2019-08-03T16:00:00.000Z" itemprop="datePublished">2019-08-04</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/周总结/">周总结</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/tags/angularjs/">angularjs</a>, <a class="article-tag-link" href="/tags/asp-net-web-api/">asp.net web api</a>, <a class="article-tag-link" href="/tags/postgis/">postgis</a>
+  </span>
+
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/08/04/0804-0810周总结/#comments" class="article-comment-link">Comments</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h1 id="0804-0810周"><a href="#0804-0810周" class="headerlink" title="0804-0810周"></a>0804-0810周</h1><h2 id="0805"><a href="#0805" class="headerlink" title="0805"></a>0805</h2><ol>
+<li>给出一个WKT数据，通过ST_GeomFromText构造geometry数据，然后再使用ST_Intersects求相交数据；</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> gid, linecolor, proname, protype, proextent,shape_leng, shape_area, geom <span class="keyword">FROM</span> public.kg_land_bound2 </span><br><span class="line">	<span class="keyword">where</span> St_Intersects(geom, </span><br><span class="line">		ST_GeomFromText(<span class="string">'POLYGON((57404.91490982982 98730.52662771994,57404.91490982982 99013.10219287108,57405.87564580966 99022.85670897189,57408.720933204255 99032.23636448933,57413.34142921469 99040.88070452206,57419.55957077049 99048.45753193041,57427.136398178845 99054.67567348621,57435.780738211564 99059.29616949665,57445.16039372901 99062.14145689124,57454.91490982982 99063.10219287108,57721.61544323089 99063.10219287108,57731.3699593317 99062.14145689124,57740.74961484915 99059.29616949665,57749.39395488187 99054.67567348621,57756.97078229022 99048.45753193041,57763.18892384602 99040.88070452206,57767.80941985646 99032.23636448933,57770.65470725105 99022.85670897189,57771.61544323089 99013.10219287108,57771.61544323089 98730.52662771994,57770.65470725105 98720.77211161914,57767.80941985646 98711.39245610169,57763.18892384602 98702.74811606896,57756.97078229022 98695.17128866061,57749.39395488187 98688.95314710481,57740.74961484915 98684.33265109437,57731.3699593317 98681.48736369978,57721.61544323089 98680.52662771994,57454.91490982982 98680.52662771994,57445.16039372901 98681.48736369978,57435.780738211564 98684.33265109437,57427.136398178845 98688.95314710481,57419.55957077049 98695.17128866061,57413.34142921469 98702.74811606896,57408.720933204255 98711.39245610169,57405.87564580966 98720.77211161914,57404.91490982982 98730.52662771994))'</span>,<span class="number">4547</span>)</span><br><span class="line">   );</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>asp.net web api中，post请求的方式比较怪异，最好使用dynamic数据类型，在使用动态类型时，需要对数据进行解析操作：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[HttpPost]</span><br><span class="line">[Route(&quot;getSpatialQueryInfo&quot;)]</span><br><span class="line">public Result&lt;List&lt;KgLandBound&gt;&gt; getSpatialQueryInfo(dynamic obj)</span><br><span class="line">&#123;</span><br><span class="line">    string wkt = obj.wkt;</span><br><span class="line">    return sas.spatialQuery(wkt);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>font awesome中使用数字</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"fa-stack"</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"fa fa-circle-thin fa-stack-2x"</span> <span class="attr">style</span>=<span class="string">"color: red"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">strong</span> <span class="attr">class</span>=<span class="string">"fa-stack-1x"</span> <span class="attr">style</span>=<span class="string">"color: red"</span>&gt;</span>2<span class="tag">&lt;/<span class="name">strong</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>angularjs中，执行ng-repeat操作时，遍历时加上index</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ng-repeat=<span class="string">"layer in table.data track by $index"</span></span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>根据pg查出来的geometry，顺带把面积也进行查询</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> res.gid,res.ydtype,res.ydcode,res.shape_area,st_area(res.wkt),res.wkt <span class="keyword">from</span> (</span><br><span class="line"> <span class="keyword">SELECT</span> gid, ydtype, ydcode,  shape_area,ST_Intersection(geom,ST_MakeEnvelope(<span class="number">49701.02023537382</span>,<span class="number">96951.72932012533</span>,<span class="number">49865.59139784948</span>,<span class="number">97115.77131487598</span>,<span class="number">4547</span>)) <span class="keyword">as</span> wkt</span><br><span class="line"> <span class="keyword">FROM</span> public.kg_land_bound2  <span class="keyword">where</span> ST_Intersects(geom,ST_MakeEnvelope(<span class="number">49701.02023537382</span>,<span class="number">96951.72932012533</span>,<span class="number">49865.59139784948</span>,<span class="number">97115.77131487598</span>,<span class="number">4547</span>))</span><br><span class="line">) <span class="keyword">as</span> res</span><br></pre></td></tr></table></figure>
+
+<h2 id="0806"><a href="#0806" class="headerlink" title="0806"></a>0806</h2><ol>
+<li>angularjs中的watch使用方法：</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$scope.$watch(<span class="string">"bufferDistance"</span>,<span class="function"><span class="keyword">function</span> (<span class="params">newValue,oldValue</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(newValue &gt; <span class="number">0</span>)&#123;</span><br><span class="line">        $scope.showDrawLine = <span class="literal">true</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        $scope.showDrawLine = <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,<span class="literal">true</span>);</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>postgresql中的简单分页:limit代表每页个数，offset代表偏移量，以下面的代码为例，offset 20代表前面偏移20个数据，从第二十一个数据开始；</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> gid, ydcode, ydtype, capability, bldhlimit,shape_leng, shape_area, geom</span><br><span class="line">	<span class="keyword">FROM</span> public.kg_land_bound2 <span class="keyword">order</span> <span class="keyword">by</span> gid <span class="keyword">limit</span> <span class="number">10</span> <span class="keyword">offset</span> <span class="number">20</span>;</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>angularjs使用ng-class对于样式的动态修改，使用ng-repeat循环生成子列表。其中通过$index与selected来进行判断，如果两个值相等，那么，selectedBaseMap样式将会生效，从而出现样式切换的效果；</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">ng-repeat</span>=<span class="string">"item in baseLayers"</span></span></span><br><span class="line"><span class="tag">         <span class="attr">ng-class</span>=<span class="string">"&#123;selectedBaseMap:$index == selected&#125;"</span></span></span><br><span class="line"><span class="tag">         <span class="attr">style</span>=<span class="string">"background: url('../../App/assets/images/&#123;&#123;item.img&#125;&#125;')"</span></span></span><br><span class="line"><span class="tag">         <span class="attr">ng-click</span>=<span class="string">"showBaseMap(item.title,$index)"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"baseMapTitle"</span> <span class="attr">ng-class</span>=<span class="string">"&#123;baseMapTitleActive:$index == selected&#125;"</span>&gt;</span></span><br><span class="line">            &#123;&#123;item.title&#125;&#125;</span><br><span class="line">        <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$scope.selected = <span class="number">1</span> <span class="comment">//给selected设置一个默认值，使得有默认选中的效果</span></span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>完整的分页查询语句</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> </span><br><span class="line">	res.gid,</span><br><span class="line">	res.ydtype,</span><br><span class="line">	res.ydcode,</span><br><span class="line">	res.shape_area,</span><br><span class="line">	st_area(res.wkt),</span><br><span class="line">	res.wkt, </span><br><span class="line">	res.fullCount <span class="keyword">from</span> </span><br><span class="line">	(</span><br><span class="line">		<span class="keyword">SELECT</span> </span><br><span class="line">			gid, </span><br><span class="line">			ydtype, </span><br><span class="line">			ydcode,  </span><br><span class="line">			shape_area,</span><br><span class="line">			<span class="keyword">count</span>(*) <span class="keyword">OVER</span>() <span class="keyword">AS</span> fullCount,</span><br><span class="line">			ST_Intersection(geom,ST_MakeEnvelope(<span class="number">49701.02023537382</span>,<span class="number">96951.72932012533</span>,<span class="number">49865.59139784948</span>,<span class="number">97115.77131487598</span>,<span class="number">4547</span>)) <span class="keyword">as</span> wkt</span><br><span class="line">		<span class="keyword">FROM</span> </span><br><span class="line">			public.kg_land_bound2  </span><br><span class="line">		<span class="keyword">where</span> </span><br><span class="line">			ST_Intersects(geom,ST_MakeEnvelope(<span class="number">49701.02023537382</span>,<span class="number">96951.72932012533</span>,<span class="number">49865.59139784948</span>,<span class="number">97115.77131487598</span>,<span class="number">4547</span>))</span><br><span class="line">		<span class="keyword">order</span> <span class="keyword">by</span> gid <span class="keyword">limit</span> <span class="number">3</span> <span class="keyword">offset</span> <span class="number">0</span></span><br><span class="line">	)</span><br><span class="line"><span class="keyword">as</span> res;</span><br></pre></td></tr></table></figure>
+
+<h2 id="0807"><a href="#0807" class="headerlink" title="0807"></a>0807</h2><ol>
+<li>ng-table的分页方式</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"> <span class="tag">&lt;<span class="name">table</span> <span class="attr">ng-table</span>=<span class="string">"tp"</span> <span class="attr">class</span>=<span class="string">"table table-condensed table-bordered table-striped"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">tr</span> <span class="attr">ng-repeat</span>=<span class="string">"row in $data track by $index"</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">td</span> <span class="attr">data-title</span>=<span class="string">"'地块名称'"</span>&gt;</span>&#123;&#123;row.ydcode&#125;&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">td</span> <span class="attr">data-title</span>=<span class="string">"'地块编码'"</span> <span class="attr">style</span>=<span class="string">"max-width: 330px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"</span> &gt;</span>&#123;&#123;row.ydtype&#125;&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">td</span> <span class="attr">data-title</span>=<span class="string">"'地块面积'"</span> <span class="attr">style</span>=<span class="string">"max-width: 330px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"</span> &gt;</span>&#123;&#123;row.area&#125;&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">td</span> <span class="attr">data-title</span>=<span class="string">"'操作'"</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"fa fa-crosshairs"</span> <span class="attr">ng-click</span>=<span class="string">"moveToData($index)"</span> <span class="attr">title</span>=<span class="string">"移动"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript"><span class="function"><span class="keyword">function</span> <span class="title">bufferQuery</span>(<span class="params">wkt,distance</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">                $scope.loadingPanel = <span class="literal">true</span>;</span></span><br><span class="line">                spatialApi.getPagedSpatialAnalysisInfo(wkt,1,20).then(</span><br><span class="line">                    resp =&gt; &#123;</span><br><span class="line">                        showData(resp.data.data.data);</span><br><span class="line">                        $scope.table.data = resp.data.data.data;</span><br><span class="line"><span class="javascript">                        $scope.loadingPanel = <span class="literal">false</span>;</span></span><br><span class="line">                    &#125;</span><br><span class="line">                );</span><br><span class="line"><span class="javascript">                <span class="comment">//展示查询返回的数据</span></span></span><br><span class="line"><span class="javascript">                <span class="function"><span class="keyword">function</span> <span class="title">showData</span>(<span class="params">data</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">                    $scope.tp = <span class="keyword">new</span> NgTableParams(</span></span><br><span class="line">                        &#123;</span><br><span class="line">                            count: 20,</span><br><span class="line">                        &#125;,</span><br><span class="line">                        &#123;</span><br><span class="line">                            counts: [],</span><br><span class="line">                            dataset:data,</span><br><span class="line"><span class="javascript">                            getData: <span class="function">(<span class="params">params</span>) =&gt;</span> &#123;</span></span><br><span class="line"><span class="javascript">                                <span class="keyword">return</span> spatialApi.getPagedSpatialAnalysisInfo(wkt,params.page(),params.count()).then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span></span><br><span class="line">                                    params.total(res.data.data.total);</span><br><span class="line">                                    $scope.table.data = res.data.data.data;</span><br><span class="line"><span class="javascript">                                    <span class="keyword">return</span> res.data.data.data;</span></span><br><span class="line">                                &#125;);</span><br><span class="line">                            &#125;,</span><br><span class="line">                        &#125;</span><br><span class="line">                    );</span><br><span class="line"></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://yoursite.com/2019/08/04/0804-0810周总结/" title="0804-0810周总结" target="_blank" rel="external">http://yoursite.com/2019/08/04/0804-0810周总结/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/lucahan" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/lucahan" target="_blank"><span class="text-dark">汉景源(GIS工程师)</span><small class="ml-1x">长沙市规划信息服务中心</small></a></h3>
+        <div>个人简介。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2019/08/03/测试赛/" title="测试赛"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+    <li class="toggle-toc">
+      <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false" title="Catalogue" role="button">
+        <span>[&nbsp;</span><span>Catalogue</span>
+        <i class="text-collapsed icon icon-anchor"></i>
+        <i class="text-in icon icon-close"></i>
+        <span>]</span>
+      </a>
+    </li>
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        &copy; 2019 汉景源
+        
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script src="/js/plugin.min.js"></script>
+<script src="/js/application.js"></script>
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+
+
+
+
+   
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+</body>
+</html>
