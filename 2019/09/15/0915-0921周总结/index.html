@@ -17,21 +17,23 @@
   <meta http-equiv="window-target" content="_top">
   
   
-  <title>0825-0831周总结 | 汉景源的博客</title>
-  <meta name="description" content="0825-0831周0830 对于WFS Transaction的使用，首先要确保geoserver的权限打开，即如果不确定的话，启动匿名模式；  1http://127.0.0.1:8080/geoserver/web/wicket/page?57   构造WFS/WMS相关语句时，可以参考使用demo request页面，查看相关的示例请求；  1http://127.0.0.1:8080/g">
-<meta name="keywords" content="geoserver">
+  <title>0915-0921周总结 | 汉景源的博客</title>
+  <meta name="description" content="0915-0921周0917 组织树的简单递归算法实现  ![ 1234567title: 0915-0921周总结date: 2019-09-15 00:00:00tags:    - postgresql    - geoservercategories: 周总结toc: true  0915-0921周0917 组织树的简单递归算法实现   12345678910111213data.for">
+<meta name="keywords" content="geoserver,postgresql">
 <meta property="og:type" content="article">
-<meta property="og:title" content="0825-0831周总结">
-<meta property="og:url" content="http://yoursite.com/2019/08/25/0825-0831周总结/index.html">
+<meta property="og:title" content="0915-0921周总结">
+<meta property="og:url" content="http://yoursite.com/2019/09/15/0915-0921周总结/index.html">
 <meta property="og:site_name" content="汉景源的博客">
-<meta property="og:description" content="0825-0831周0830 对于WFS Transaction的使用，首先要确保geoserver的权限打开，即如果不确定的话，启动匿名模式；  1http://127.0.0.1:8080/geoserver/web/wicket/page?57   构造WFS/WMS相关语句时，可以参考使用demo request页面，查看相关的示例请求；  1http://127.0.0.1:8080/g">
+<meta property="og:description" content="0915-0921周0917 组织树的简单递归算法实现  ![ 1234567title: 0915-0921周总结date: 2019-09-15 00:00:00tags:    - postgresql    - geoservercategories: 周总结toc: true  0915-0921周0917 组织树的简单递归算法实现   12345678910111213data.for">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-30T01:36:39.000Z">
+<meta property="og:image" content="http://yoursite.com/.com//1569120668988.png">
+<meta property="og:updated_time" content="2019-09-22T02:51:10.882Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="0825-0831周总结">
-<meta name="twitter:description" content="0825-0831周0830 对于WFS Transaction的使用，首先要确保geoserver的权限打开，即如果不确定的话，启动匿名模式；  1http://127.0.0.1:8080/geoserver/web/wicket/page?57   构造WFS/WMS相关语句时，可以参考使用demo request页面，查看相关的示例请求；  1http://127.0.0.1:8080/g">
+<meta name="twitter:title" content="0915-0921周总结">
+<meta name="twitter:description" content="0915-0921周0917 组织树的简单递归算法实现  ![ 1234567title: 0915-0921周总结date: 2019-09-15 00:00:00tags:    - postgresql    - geoservercategories: 周总结toc: true  0915-0921周0917 组织树的简单递归算法实现   12345678910111213data.for">
+<meta name="twitter:image" content="http://yoursite.com/.com//1569120668988.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://yoursite.com/2019/08/25/0825-0831周总结/index.html">
+  <link rel="canonical" href="http://yoursite.com/2019/09/15/0915-0921周总结/index.html">
   
     <link rel="alternate" href="/atom.xml" title="汉景源的博客" type="application/atom+xml">
   
@@ -312,21 +314,21 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">Catalogue</h3>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#0825-0831周"><span class="toc-number">1.</span> <span class="toc-text">0825-0831周</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#0830"><span class="toc-number">1.1.</span> <span class="toc-text">0830</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#0915-0921周"><span class="toc-number">1.</span> <span class="toc-text">0915-0921周</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#0917"><span class="toc-number">1.1.</span> <span class="toc-text">0917</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#0915-0921周-1"><span class="toc-number">2.</span> <span class="toc-text">0915-0921周</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#0917-1"><span class="toc-number">2.1.</span> <span class="toc-text">0917</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0918"><span class="toc-number">2.2.</span> <span class="toc-text">0918</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0919"><span class="toc-number">2.3.</span> <span class="toc-text">0919</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0918-1"><span class="toc-number">2.4.</span> <span class="toc-text">0918</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0919-1"><span class="toc-number">2.5.</span> <span class="toc-text">0919</span></a></li></ol></li></ol>
     </nav>
   </div>
 </aside>
 
 <main class="main" role="main">
   <div class="content">
-  <article id="post-0825-0831周总结" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-0915-0921周总结" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      0825-0831周总结
+      0915-0921周总结
     </h1>
   
 
@@ -334,8 +336,8 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2019/08/25/0825-0831周总结/" class="article-date">
-	  <time datetime="2019-08-24T16:00:00.000Z" itemprop="datePublished">2019-08-25</time>
+	<a href="/2019/09/15/0915-0921周总结/" class="article-date">
+	  <time datetime="2019-09-14T16:00:00.000Z" itemprop="datePublished">2019-09-15</time>
 	</a>
 </span>
         
@@ -347,31 +349,53 @@
         
   <span class="article-tag">
     <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/geoserver/">geoserver</a>
+	<a class="article-tag-link" href="/tags/geoserver/">geoserver</a>, <a class="article-tag-link" href="/tags/postgresql/">postgresql</a>
   </span>
 
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/08/25/0825-0831周总结/#comments" class="article-comment-link">Comments</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/09/15/0915-0921周总结/#comments" class="article-comment-link">Comments</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="0825-0831周"><a href="#0825-0831周" class="headerlink" title="0825-0831周"></a>0825-0831周</h1><h2 id="0830"><a href="#0830" class="headerlink" title="0830"></a>0830</h2><ol>
-<li>对于WFS Transaction的使用，首先要确保geoserver的权限打开，即如果不确定的话，启动匿名模式；</li>
+        <h1 id="0915-0921周"><a href="#0915-0921周" class="headerlink" title="0915-0921周"></a>0915-0921周</h1><h2 id="0917"><a href="#0917" class="headerlink" title="0917"></a>0917</h2><ol>
+<li>组织树的简单递归算法实现</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://127.0.0.1:8080/geoserver/web/wicket/page?57</span><br></pre></td></tr></table></figure>
+<p>![</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">title: 0915-0921周总结</span><br><span class="line">date: 2019-09-15 00:00:00</span><br><span class="line">tags:</span><br><span class="line">    - postgresql</span><br><span class="line">    - geoserver</span><br><span class="line">categories: 周总结</span><br><span class="line">toc: true</span><br></pre></td></tr></table></figure>
 
-<ol start="2">
-<li>构造WFS/WMS相关语句时，可以参考使用demo request页面，查看相关的示例请求；</li>
+<h1 id="0915-0921周-1"><a href="#0915-0921周-1" class="headerlink" title="0915-0921周"></a>0915-0921周</h1><h2 id="0917-1"><a href="#0917-1" class="headerlink" title="0917"></a>0917</h2><ol>
+<li>组织树的简单递归算法实现</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://127.0.0.1:8080/geoserver/web/wicket/bookmarkable/org.geoserver.web.demo.DemoRequestsPage?59</span><br></pre></td></tr></table></figure>
+<p><img src="/.com//1569120668988.png" alt="1569120668988"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">data.forEach(item=&gt;&#123;</span><br><span class="line">  recursiveTraverse(item);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">const recursiveTraverse = function (node) &#123;</span><br><span class="line">  if (!node || node[&apos;children&apos;].length === 0) &#123;</span><br><span class="line">      node[&apos;children&apos;] = null;</span><br><span class="line">      return;</span><br><span class="line">  &#125;</span><br><span class="line">  node[&apos;children&apos;].forEach(function(item) &#123;</span><br><span class="line">      recursiveTraverse(item);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-<ol start="3">
-<li>根据demo request生成的示例请求进行相关的操作即可；</li>
+<h2 id="0918"><a href="#0918" class="headerlink" title="0918"></a>0918</h2><ol>
+<li>geoserver中对于restful api使用时遇到401和403问题的解决办法：（1）遇到401时，需要在请求的headers中携带’Authorization’: ‘Basic YWRtaW46Z2Vvc2VydmVy’来进行解决；（2）遇到403时，说明在web.xml中，跨域信息没有完全打开，此时需要打开跨域请求，即:</li>
 </ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&lt;filter&gt;</span><br><span class="line">     &lt;filter-name&gt;cross-origin&lt;/filter-name&gt;</span><br><span class="line">     &lt;filter-class&gt;org.eclipse.jetty.servlets.CrossOriginFilter&lt;/filter-class&gt;</span><br><span class="line">     </span><br><span class="line">    &lt;init-param&gt;</span><br><span class="line">        &lt;param-name&gt;chainPreflight&lt;/param-name&gt;</span><br><span class="line">        &lt;param-value&gt;false&lt;/param-value&gt;</span><br><span class="line">    &lt;/init-param&gt;</span><br><span class="line">    &lt;init-param&gt;</span><br><span class="line">        &lt;param-name&gt;allowedOrigins&lt;/param-name&gt;</span><br><span class="line">        &lt;param-value&gt;*&lt;/param-value&gt;</span><br><span class="line">    &lt;/init-param&gt;</span><br><span class="line">    &lt;init-param&gt;</span><br><span class="line">        &lt;param-name&gt;allowedMethods&lt;/param-name&gt;</span><br><span class="line">        &lt;param-value&gt;GET,POST,PUT,DELETE,HEAD,OPTIONS&lt;/param-value&gt;</span><br><span class="line">    &lt;/init-param&gt;</span><br><span class="line">    &lt;init-param&gt;</span><br><span class="line">        &lt;param-name&gt;allowedHeaders&lt;/param-name&gt;</span><br><span class="line">        &lt;param-value&gt;*&lt;/param-value&gt;</span><br><span class="line">    &lt;/init-param&gt;</span><br><span class="line"> &lt;/filter&gt;</span><br><span class="line"></span><br><span class="line"> &lt;filter-mapping&gt;</span><br><span class="line">   &lt;filter-name&gt;Set Character Encoding&lt;/filter-name&gt;</span><br><span class="line">   &lt;url-pattern&gt;/*&lt;/url-pattern&gt;</span><br><span class="line"> &lt;/filter-mapping&gt;</span><br><span class="line"></span><br><span class="line"> &lt;filter-mapping&gt;</span><br><span class="line">     &lt;filter-name&gt;cross-origin&lt;/filter-name&gt;</span><br><span class="line">     &lt;url-pattern&gt;/*&lt;/url-pattern&gt;</span><br><span class="line"> &lt;/filter-mapping&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="0919"><a href="#0919" class="headerlink" title="0919"></a>0919</h2><ol>
+<li>天地图的能力请求方式：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://t0.tianditu.gov.cn/vec_c/wmts?tk=f1d0e61021ded0ed120188019ec1c5a3?request=GetCapabilities&amp;service=wmts</span><br></pre></td></tr></table></figure>
+
+<p>1568707394204](../../../../%E6%88%91%E7%9A%84%E5%9D%9A%E6%9E%9C%E4%BA%91/%E5%8D%9A%E5%AE%A2/2019/09/asset/1568707394204.png)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">data.forEach(<span class="function"><span class="params">item</span>=&gt;</span>&#123;</span><br><span class="line">  recursiveTraverse(item);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> recursiveTraverse = <span class="function"><span class="keyword">function</span> (<span class="params">node</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (!node || node[<span class="string">'children'</span>].length === <span class="number">0</span>) &#123;</span><br><span class="line">      node[<span class="string">'children'</span>] = <span class="literal">null</span>;</span><br><span class="line">      <span class="keyword">return</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  node[<span class="string">'children'</span>].forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>) </span>&#123;</span><br><span class="line">      recursiveTraverse(item);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="0918-1"><a href="#0918-1" class="headerlink" title="0918"></a>0918</h2><ol>
+<li>geoserver中对于restful api使用时遇到401和403问题的解决办法：（1）遇到401时，需要在请求的headers中携带’Authorization’: ‘Basic YWRtaW46Z2Vvc2VydmVy’来进行解决；（2）遇到403时，说明在web.xml中，跨域信息没有完全打开，此时需要打开跨域请求，即:</li>
+</ol>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">filter</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>cross-origin<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">filter-class</span>&gt;</span>org.eclipse.jetty.servlets.CrossOriginFilter<span class="tag">&lt;/<span class="name">filter-class</span>&gt;</span></span><br><span class="line">		</span><br><span class="line">    <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>chainPreflight<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>false<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>allowedOrigins<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>*<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>allowedMethods<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>GET,POST,PUT,DELETE,HEAD,OPTIONS<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>allowedHeaders<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>*<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">filter</span>&gt;</span></span><br><span class="line"></span><br><span class="line"> <span class="tag">&lt;<span class="name">filter-mapping</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>Set Character Encoding<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/*<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">filter-mapping</span>&gt;</span></span><br><span class="line"></span><br><span class="line"> <span class="tag">&lt;<span class="name">filter-mapping</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>cross-origin<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/*<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">filter-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="0919-1"><a href="#0919-1" class="headerlink" title="0919"></a>0919</h2><ol>
+<li>天地图的能力请求方式：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://t0.tianditu.gov.cn/vec_c/wmts?tk=f1d0e61021ded0ed120188019ec1c5a3?request=GetCapabilities&amp;service=wmts</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -381,7 +405,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://yoursite.com/2019/08/25/0825-0831周总结/" title="0825-0831周总结" target="_blank" rel="external">http://yoursite.com/2019/08/25/0825-0831周总结/</a>
+      <a href="http://yoursite.com/2019/09/15/0915-0921周总结/" title="0915-0921周总结" target="_blank" rel="external">http://yoursite.com/2019/09/15/0915-0921周总结/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -427,13 +451,9 @@
   
   <ul class="pager pull-left">
     
-    <li class="prev">
-      <a href="/2019/09/01/0901-0907周总结/" title="0901-0907周总结"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
-    </li>
-    
     
     <li class="next">
-      <a href="/2019/08/18/0818-0824周总结/" title="0818-0824周总结"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2019/09/08/0908-0914周总结/" title="0908-0914周总结"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
