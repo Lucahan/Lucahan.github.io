@@ -1,5 +1,6 @@
 {
     "version": 8,
+    "name": "高德",
     "sources": {
         "raster-tiles": {
             "type": "raster",
