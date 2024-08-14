@@ -6,22 +6,22 @@
         "raster-tiles": {
             "type": "raster",
             "tiles": [
-                "https://webst02.is.autonavi.com/appmaptile?style=6&x={x}&y={y}&z={z}"
+                "http://wprd04.is.autonavi.com/appmaptile?x={x}&y={y}&z={z}&lang=zh_cn&size=1&scl=1&style=6"
             ],
             "tileSize": 256,
             "bounds": [-180,-90,180,90],
-            "minzoom": 3,
-            "maxzoom": 18,
+            "minzoom": 0,
+            "maxzoom": 22,
             "scheme": "xyz"
         }
     },
     "layers": [
         {
-            "id": "simple-tiles",
+            "id": "raster-tiles",
             "type": "raster",
             "source": "raster-tiles",
-            "minzoom": 3,
-            "maxzoom": 18
+            "minzoom": 0,
+            "maxzoom": 22
         }
     ]
 }
