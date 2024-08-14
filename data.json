@@ -1,133 +1,45 @@
 {
-          'version': 8,
-          'sources': {
-            'gd-satellite': {
-              type: 'raster',
-              tiles: [
-                // 高德地图 卫星影像
-                'http://wprd04.is.autonavi.com/appmaptile?x={x}&y={y}&z={z}&lang=zh_cn&size=1&scl=1&style=6',
-              ],
-              tileSize: 256,
-            },
-            'gd-vector': {
-              type: 'raster',
-              tiles: [
-                // 高德地图 矢量地图
-                'http://wprd04.is.autonavi.com/appmaptile?x={x}&y={y}&z={z}&lang=zh_cn&size=1&scl=2&style=7',
-              ],
-              tileSize: 256,
-            },
-            'tian-satellite': {
-              type: 'raster',
-              tiles: [
-                // 天地图 卫星影像
-                'http://t0.tianditu.gov.cn/img_w/wmts?tk=1883a2da124fe27b3c281f9d65356e82&SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=img&STYLE=default&TILEMATRIXSET=w&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}&FORMAT=tiles',
-              ],
-              tileSize: 256,
-            },
-            'tian-vector': {
-              type: 'raster',
-              tiles: [
-                // 天地图 矢量地图
-                'http://t0.tianditu.gov.cn/vec_w/wmts?tk=1883a2da124fe27b3c281f9d65356e82&SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=vec&STYLE=default&TILEMATRIXSET=w&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}&FORMAT=tiles',
-              ],
-              tileSize: 256,
-            },
-            'bing-satellite': {
-              type: 'raster',
-              tiles: [
-                // bingmap 卫星影像
-                'http://ak.dynamic.t0.tiles.virtualearth.net/comp/ch/{quadkey}?mkt=zh-CN&it=A,G,L&og=819&n=z',
-              ],
-              tileSize: 256,
-            },
-            'bing-vector': {
-              type: 'raster',
-              tiles: [
-                // bingmap 矢量地图
-                'http://ak.dynamic.t0.tiles.virtualearth.net/comp/ch/{quadkey}?mkt=zh-CN&it=G,L&shading=hill&og=819&n=z',
-              ],
-              tileSize: 256,
-            },
-            'mapbox-satellite': {
-              type: 'raster',
-              tiles: [
-                // mapbox 卫星影像
-                'https://api.mapbox.com/v4/mapbox.satellite/{z}/{x}/{y}.png?sku=101wZp4uNMRnl&access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NDg1bDA1cjYzM280NHJ5NzlvNDMifQ.d6e-nNyBDtmQCVwVNivz7A',
-              ],
-              tileSize: 256,
-            },
-          },
-          'layers': [
-            {
-              id: 'gd-satellite',
-              type: 'raster',
-              source: 'gd-satellite',
-              layout: {
-                visibility: 'visible',
-              },
-              minzoom: 0,
-              maxzoom: 22,
-            },
-            {
-              id: 'gd-vector',
-              type: 'raster',
-              source: 'gd-vector',
-              layout: {
-                visibility: 'none',
-              },
-              minzoom: 0,
-              maxzoom: 22,
-            },
-            {
-              id: 'tian-satellite',
-              type: 'raster',
-              source: 'tian-satellite',
-              layout: {
-                visibility: 'none',
-              },
-              minzoom: 0,
-              maxzoom: 22,
-            },
-            {
-              id: 'tian-vector',
-              type: 'raster',
-              source: 'tian-vector',
-              layout: {
-                visibility: 'none',
-              },
-              minzoom: 0,
-              maxzoom: 22,
-            },
-            {
-              id: 'bing-satellite',
-              type: 'raster',
-              source: 'bing-satellite',
-              layout: {
-                visibility: 'none',
-              },
-              minzoom: 0,
-              maxzoom: 22,
-            },
-            {
-              id: 'bing-vector',
-              type: 'raster',
-              source: 'bing-vector',
-              layout: {
-                visibility: 'none',
-              },
-              minzoom: 0,
-              maxzoom: 22,
-            },
-            {
-              id: 'mapbox-satellite',
-              type: 'raster',
-              source: 'mapbox-satellite',
-              layout: {
-                visibility: 'none',
-              },
-              minzoom: 0,
-              maxzoom: 22,
-            },
-          ],
+    "version": 8,
+    "name": "配图方案",
+    "id":"hjy",
+    "sources": {
+        "gd-satellite": {
+            "type": "raster",
+            "tiles": [
+                "http://wprd04.is.autonavi.com/appmaptile?x={x}&y={y}&z={z}&lang=zh_cn&size=1&scl=1&style=6"
+            ],
+            "tileSize": 256,
+            "bounds": [-180,-90,180,90],
+            "minzoom": 0,
+            "maxzoom": 19,
+            "scheme": "xyz"
+        },
+        "gd-vector": {
+            "type": "raster",
+            "tiles": [
+                "http://wprd04.is.autonavi.com/appmaptile?x={x}&y={y}&z={z}&lang=zh_cn&size=1&scl=2&style=7"
+            ],
+            "tileSize": 256,
+            "bounds": [-180,-90,180,90],
+            "minzoom": 0,
+            "maxzoom": 19,
+            "scheme": "xyz"
         }
+    },
+    "layers": [
+        {
+            "id": "gd-satellite",
+            "type": "raster",
+            "source": "gd-satellite",
+            "minzoom": 0,
+            "maxzoom": 19
+        },
+        {
+            "id": "gd-vector",
+            "type": "raster",
+            "source": "gd-vector",
+            "minzoom": 0,
+            "maxzoom": 19
+        }
+    ]
+}
