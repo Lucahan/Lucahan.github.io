@@ -3,17 +3,6 @@
     "name": "配图方案",
     "id":"hjy",
     "sources": {
-        "gd-satellite": {
-            "type": "raster",
-            "tiles": [
-                "http://wprd04.is.autonavi.com/appmaptile?x={x}&y={y}&z={z}&lang=zh_cn&size=1&scl=1&style=6"
-            ],
-            "tileSize": 256,
-            "bounds": [-180,-90,180,90],
-            "minzoom": 0,
-            "maxzoom": 19,
-            "scheme": "xyz"
-        },
         "gd-vector": {
             "type": "raster",
             "tiles": [
@@ -27,13 +16,6 @@
         }
     },
     "layers": [
-        {
-            "id": "gd-satellite",
-            "type": "raster",
-            "source": "gd-satellite",
-            "minzoom": 0,
-            "maxzoom": 19
-        },
         {
             "id": "gd-vector",
             "type": "raster",
